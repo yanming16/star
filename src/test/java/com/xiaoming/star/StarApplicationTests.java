@@ -8,6 +8,7 @@ class StarApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

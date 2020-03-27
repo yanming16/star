@@ -26,11 +26,17 @@ public class StarController {
 
     @GetMapping("/test/get")
     public String test() {
-        System.out.println("test1 start");
-        mStarService.starNum1("test1");
-        System.out.println("test2 start");
-        mStarService.starNum2("test2");
-        System.out.println("end");
+        try {
+            for (int i = 0; i < 100; i++) {
+                LOGGER.info("test1 start");
+                mStarService.starNum1("test1");
+                LOGGER.info("test2 start");
+                mStarService.starNum2("test2");
+                LOGGER.info("end");
+            }
+        }catch (Exception e) {
+            LOGGER.error("exception : ", e);
+        }
         return "ok";
     }
 
@@ -49,7 +55,7 @@ public class StarController {
     }
 
     @PostMapping("/test/post")
-    public void testPost(@RequestBody final Map<String, String> map) {
+    public void testPost(@RequestBody final Map<String, String> map) throws InterruptedException {
         System.out.println(map.get("test"));
         System.out.println("test1 start");
         mStarService.starNum1("test1");

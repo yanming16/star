@@ -16,11 +16,11 @@ import java.util.concurrent.Executor;
 public class AsyncConfig {
 
     /** Set the ThreadPoolExecutor's core pool size. */
-    private int corePoolSize = 10;
+    private int corePoolSize = 1;
     /** Set the ThreadPoolExecutor's maximum pool size. */
-    private int maxPoolSize = 200;
+    private int maxPoolSize = 2;
     /** Set the capacity for the ThreadPoolExecutor's BlockingQueue. */
-    private int queueCapacity = 10;
+    private int queueCapacity = 2;
 
     @Bean("async1")
     public Executor myAsync1() {
@@ -30,6 +30,7 @@ public class AsyncConfig {
         executor.setQueueCapacity(queueCapacity);
         executor.setThreadNamePrefix("my-executor1-");
         executor.initialize();
+        executor.getThreadPoolExecutor().getTaskCount();
         return executor;
     }
 

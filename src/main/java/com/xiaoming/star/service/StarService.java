@@ -6,6 +6,6 @@ package com.xiaoming.star.service;
  */
 public interface StarService {
 
-    void starNum1(String starName);
-    void starNum2(String starName);
+    void starNum1(String starName) throws InterruptedException;
+    void starNum2(String starName) throws InterruptedException;
 }
