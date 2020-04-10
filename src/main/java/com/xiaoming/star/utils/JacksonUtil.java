@@ -1,9 +1,3 @@
-/*
- * JacksonUtil.java
- * Copyright 2019 Qunhe Tech, all rights reserved.
- * Qunhe PROPRIETARY/CONFIDENTIAL, any form of usage is subject to approval.
- */
-
 package com.xiaoming.star.utils;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
